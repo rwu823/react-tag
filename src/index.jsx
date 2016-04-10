@@ -1,3 +1,4 @@
+const React = require('react')
 class Div extends React.Component {
   static propTypes = {
     css: React.PropTypes.object,
