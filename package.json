@@ -2,7 +2,7 @@
   "name": "react-div",
   "version": "1.0.0",
   "description": "React Div component, like normal <div/> but better",
-  "main": "src",
+  "main": "dist/react-div.js",
   "scripts": {
     "dev": "node ./dev/server",
     "codecov": "codecov",
