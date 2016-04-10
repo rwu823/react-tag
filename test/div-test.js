@@ -16,7 +16,7 @@ describe('#test', ()=>{
       b: true,
     }
     render(<DivComponent id="div-test" css={css}/>, app)
-    assert.include($('#div-test').attr('class'), '-on b', 'has class name')
+    assert.equal($('#div-test').attr('class'), '-on b', 'has class name')
   })
 
 
@@ -31,11 +31,16 @@ describe('#test', ()=>{
   })
 
   it('test show={false} prop', ()=> {
-    render(<DivComponent show={false} id="div-test" style={{color: 'red'}}>div test</DivComponent>, app)
+    render(<DivComponent show={false} id="div-test" style={{color: 'red'}} />, app)
 
     assert.strictEqual($('#div-test').width(), 0)
     assert.strictEqual($('#div-test').height(), 0)
     assert.include($('#div-test').attr('style'), 'color: red')
+  })
+
+  it('test with children', ()=> {
+    render(<DivComponent id="div-test">div component</DivComponent>, app)
+    assert.equal($('#div-test').text(), 'div component')
   })
 
   it('test hide={true} prop, should be disappear', ()=> {
