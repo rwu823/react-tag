@@ -1,10 +1,12 @@
 [![codeship](https://img.shields.io/codeship/81f99f30-e154-0133-bdc7-0625a2f269b3/master.svg)](https://codeship.com/projects/145321)[![codecov](https://img.shields.io/codecov/c/github/rwu823/react-div/master.svg)](https://codecov.io/github/rwu823/react-div)
 
 # React Div
+
 Like the normal HTML `<div/>` but better.
 
 ## Why?
-When you'd like to display `show/none`, you probably do this everytime:
+
+When you want to show or hide a div, you probably do this everytime:
 
 ```js
 render() {
@@ -17,9 +19,9 @@ render() {
 }
 ```
 
-And we're always dynamic `add/remove` class inconvenient:
+And we always dynamically `add` or `remove` classes inconvenient.
 
-or thro the [JedWatson/classnames](https://github.com/JedWatson/classnames)
+or using the [JedWatson/classnames](https://github.com/JedWatson/classnames)
 
 ```js
 const classNames = require('classnames')
@@ -34,9 +36,10 @@ render() {
 }
 ```
 
-Stop do stupid today. `React Div` is your new friender.
+Today you can stop doing that. `React Div` is your new friend.
 
 ## Default Props
+
 ```js
   static propTypes = {
     css: React.PropTypes.object,
@@ -56,19 +59,23 @@ Stop do stupid today. `React Div` is your new friender.
 ```
 
 ## Examples
-### show
+### show: dynamically show the div
+
 ```js
 const Div = require('react-div')
 render() {
   return <Div show={false} style={{color: 'red'}}>This is Dev Component</Div>
 }
 ```
+
 output:
+
 ```html
 <div style="display: none; color: red;">This is Dev Component</div>
 ```
 
-### css
+### css: dynamically toggle css classes
+
 ```js
 const Div = require('react-div')
 const css = {
@@ -79,20 +86,26 @@ render() {
   return <Div className="a b" css={css} />
 }
 ```
+
 output:
+
 ```html
 <div class="a b foo"></div>
 ```
 
-### hide
-Sometime we don't want to render DOM, you can pass `hide` props:
+### hide: dynamically hide the div
+
+Sometime we don't want to render DOM, you can hide it by passing a `hide` props:
+
 ```js
 const Div = require('react-div')
 render() {
   return <Div hide={true} />
 }
 ```
+
 output nothing:
+
 ```html
 
 ```
