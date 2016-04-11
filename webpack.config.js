@@ -44,5 +44,8 @@ module.exports = {
 
       ],
   watch: isDev ,
-  devtool: isDev ? 'eval' : ''
+  devtool: isDev ? 'eval' : '',
+  externals: {
+    'react': 'React'
+  }
 }

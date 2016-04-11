@@ -31,7 +31,7 @@ render() {
 	bar: false    
   }
   return (
-    <div className={`a b c ${classNames(css)`} />
+    <div className={`a b c ${classNames(css)}`} />
   )
 }
 ```
