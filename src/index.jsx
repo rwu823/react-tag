@@ -1,11 +1,12 @@
-const React = require('react')
-class Div extends React.Component {
+import React, {Component, PropTypes} from 'react'
+
+class Div extends Component {
   static propTypes = {
-    css: React.PropTypes.object,
-    style: React.PropTypes.object,
-    show: React.PropTypes.bool,
-    hide: React.PropTypes.bool,
-    className: React.PropTypes.string,
+    css: PropTypes.object,
+    style: PropTypes.object,
+    show: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
+    hide: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
+    className: PropTypes.string,
   }
 
   static defaultProps = {

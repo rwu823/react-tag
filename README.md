@@ -42,11 +42,11 @@ Today you can stop doing that. `React Div` is your new friend.
 
 ```js
   static propTypes = {
-    css: React.PropTypes.object,
-    style: React.PropTypes.object,
-    show: React.PropTypes.bool,
-    hide: React.PropTypes.bool,
-    className: React.PropTypes.string,
+    css: PropTypes.object,
+    style: PropTypes.object,
+    show: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
+    hide: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
+    className: PropTypes.string,
   }
 
   static defaultProps = {
