@@ -2,7 +2,7 @@
 
 # React Div
 
-Like the normal HTML `<div/>` but better.
+Like the normal HTML `<div/>` but useful.
 
 ## Why?
 
