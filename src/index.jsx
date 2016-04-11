@@ -1,36 +1,35 @@
 import React, {Component, PropTypes} from 'react'
 
-class Div extends Component {
-  static propTypes = {
-    css: PropTypes.object,
-    style: PropTypes.object,
-    show: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
-    hide: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
-    className: PropTypes.string,
-  }
+const Div = (props) => {
+  const {css, show, children, style, hide, className, type} = props
+  const classList = `${className} ${Object.keys(css).filter(name => css[name]).join(' ')}`.trim() || null
+  const styleList = Object.assign(style, {
+    display: show ? '' : 'none',
+  })
 
-  static defaultProps = {
-    css: {},
-    style: {},
-    show: true,
-    hide: false,
-    className: ''
-  }
+  const divProps = Object.assign({}, props, { className: classList, slyle: styleList })
 
-  render() {
-    const {css, show, children, style, hide, className} = this.props
-    const classList = `${className} ${Object.keys(css).filter(name => css[name]).join(' ')}`.trim() || null
-    const styleList = Object.assign(style, {
-      display: show ? '' : 'none',
-    })
+  return (hide
+      ? null
+      : React.createElement(type, divProps)
+  )
+}
 
-    return (hide
-        ? null
-        : <div {...this.props} className={classList} style={styleList} >
-            {children}
-          </div>
-    )
-  }
+Div.propTypes = {
+  css: PropTypes.object,
+  style: PropTypes.object,
+  show: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
+  hide: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
+  className: PropTypes.string
+}
+
+Div.defaultProps = {
+  css: {},
+  style: {},
+  show: true,
+  hide: false,
+  type: 'div',
+  className: ''
 }
 
 module.exports = Div
