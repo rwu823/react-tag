@@ -1,6 +1,6 @@
 {
   "name": "react-tag",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "React Tag component, like the normal HTML <tag> but useful",
   "main": "dist/react-tag.js",
   "scripts": {

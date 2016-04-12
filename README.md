@@ -1,4 +1,4 @@
-[![codeship](https://img.shields.io/codeship/81f99f30-e154-0133-bdc7-0625a2f269b3/master.svg)](https://codeship.com/projects/145321)[![codecov](https://img.shields.io/codecov/c/github/rwu823/react-tag/master.svg)](https://codecov.io/github/rwu823/react-tag)
+[![codeship](https://img.shields.io/codeship/5c0e0520-e293-0133-a7f8-2e7ba760e325/master.svg)](https://codeship.com/projects/145633)[![codecov](https://img.shields.io/codecov/c/github/rwu823/react-tag/master.svg)](https://codecov.io/github/rwu823/react-tag)
 
 # React Tag
 
