@@ -1,6 +1,6 @@
 {
   "name": "react-div",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "React Div component, like normal <div/> but better",
   "main": "dist/react-div.js",
   "scripts": {
@@ -13,10 +13,7 @@
     "React",
     "div"
   ],
-  "author": {
-    "name": "Rocky Wu",
-    "email": "rocky823@gmail.com"
-  },
+  "author": "Rocky Wu <rocky823@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.7.6",
@@ -52,5 +49,13 @@
     "webpack": "^1.12.14",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-hot-middleware": "^2.10.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rwu823/react-div.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rwu823/react-div/issues"
+  },
+  "homepage": "https://github.com/rwu823/react-div#readme"
 }

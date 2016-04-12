@@ -1,3 +1,6 @@
+# No longer works, please transform to react-tag
+https://www.npmjs.com/package/react-tag
+
 [![codeship](https://img.shields.io/codeship/81f99f30-e154-0133-bdc7-0625a2f269b3/master.svg)](https://codeship.com/projects/145321)[![codecov](https://img.shields.io/codecov/c/github/rwu823/react-div/master.svg)](https://codecov.io/github/rwu823/react-div)
 
 # React Div
