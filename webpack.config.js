@@ -1,18 +1,18 @@
 const isDev = process.env.NODE_ENV !== 'production'
 const webpack = require('webpack')
 
-const componentName = 'div'
+const componentName = 'tag'
 
 module.exports = {
   entry: {
     [`react-${componentName}`]: isDev
-      ? ['./dev/index.js', 'webpack-hot-middleware/client']
-      : ['./src/index.jsx'],
+      ? ['./dev', 'webpack-hot-middleware/client']
+      : ['./src'],
   },
   output: {
     path: `${__dirname}/dist`,
     filename: '[name].js',
-    library: 'ReactDiv',
+    library: 'ReactTag',
     libraryTarget: 'umd',
   },
   module: {

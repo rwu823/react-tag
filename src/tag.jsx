@@ -1,12 +1,13 @@
-import React, {Component, PropTypes} from 'react'
+import React, {Component, PropTypes, createElement} from 'react'
 
-class Div extends Component {
+class Tag extends Component {
   static propTypes = {
     css: PropTypes.object,
     style: PropTypes.object,
     show: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
     hide: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
     className: PropTypes.string,
+    tagName: PropTypes.string,
   }
 
   static defaultProps = {
@@ -14,23 +15,25 @@ class Div extends Component {
     style: {},
     show: true,
     hide: false,
-    className: ''
+    className: '',
+    tagName: 'div'
   }
 
   render() {
-    const {css, show, children, style, hide, className} = this.props
+    const {css, show, style, hide, tagName, className} = this.props
+
     const classList = `${className} ${Object.keys(css).filter(name => css[name]).join(' ')}`.trim() || null
-    const styleList = Object.assign(style, {
+    const styleList = Object.assign({}, style, {
       display: show ? '' : 'none',
     })
 
+    const extendProps = Object.assign({}, this.props, {style: styleList, className: classList})
+
     return (hide
-        ? null
-        : <div {...this.props} className={classList} style={styleList} >
-            {children}
-          </div>
+      ? null
+      : createElement(tagName, extendProps)
     )
   }
 }
 
-module.exports = Div
+module.exports = Tag
