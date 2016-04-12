@@ -1,8 +1,10 @@
-[![codeship](https://img.shields.io/codeship/5c0e0520-e293-0133-a7f8-2e7ba760e325/master.svg)](https://codeship.com/projects/145633)[![Coverage](https://img.shields.io/coveralls/rwu823/react-tag.svg)](https://coveralls.io/github/rwu823/react-tag)
+[![codeship](https://img.shields.io/codeship/5c0e0520-e293-0133-a7f8-2e7ba760e325/master.svg)](https://codeship.com/projects/145633) [![Coverage](https://img.shields.io/coveralls/rwu823/react-tag.svg)](https://coveralls.io/github/rwu823/react-tag)
 
 # React Tag
-
 React Tag component, universal `tag` render, like the normal HTML `<tag>` but useful.
+
+- [x] 0 dependency
+- [x] without invade, works well with normal tags
 
 ## Why?
 
@@ -19,7 +21,7 @@ render() {
 }
 ```
 
-Dnd we always dynamically `add` or `remove` classes inconvenient.
+And we always dynamically `add` or `remove` classes inconvenient.
 
 or using the [JedWatson/classnames](https://github.com/JedWatson/classnames)
 
