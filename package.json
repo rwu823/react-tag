@@ -1,11 +1,10 @@
 {
   "name": "react-tag",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "React Tag component, like the normal HTML <tag> but useful",
   "main": "dist/react-tag.js",
   "scripts": {
     "dev": "node ./dev/server",
-    "codecov": "codecov",
     "build": "export NODE_ENV=production && gulp build",
     "test": "karma start"
   },
@@ -26,7 +25,7 @@
     "cash-dom": "^1.2.0",
     "chai": "^3.5.0",
     "chalk": "^1.1.3",
-    "codecov": "^1.0.1",
+    "coveralls": "^2.11.9",
     "eslint": "^2.7.0",
     "express": "^4.13.4",
     "gulp": "^3.9.1",
