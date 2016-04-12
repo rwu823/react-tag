@@ -1,9 +1,8 @@
 {
   "name": "react-tag",
-  "version": "2.0.0",
+  "version": "2.0.2",
   "description": "React Tag component, like the normal HTML <tag> but useful",
   "main": "dist/react-tag.js",
-  "homepage": "https://github.com/rwu823/react-tag",
   "scripts": {
     "dev": "node ./dev/server",
     "codecov": "codecov",
@@ -14,10 +13,7 @@
     "React",
     "tag"
   ],
-  "author": {
-    "name": "Rocky Wu",
-    "email": "rocky823@gmail.com"
-  },
+  "author": "Rocky Wu <rocky823@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.7.6",
@@ -53,5 +49,13 @@
     "webpack": "^1.12.15",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-hot-middleware": "^2.10.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rwu823/react-div.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rwu823/react-div/issues"
+  },
+  "homepage": "https://github.com/rwu823/react-div#readme"
 }
