@@ -1,12 +1,12 @@
-[![codeship](https://img.shields.io/codeship/81f99f30-e154-0133-bdc7-0625a2f269b3/master.svg)](https://codeship.com/projects/145321)[![codecov](https://img.shields.io/codecov/c/github/rwu823/react-div/master.svg)](https://codecov.io/github/rwu823/react-div)
+[![codeship](https://img.shields.io/codeship/81f99f30-e154-0133-bdc7-0625a2f269b3/master.svg)](https://codeship.com/projects/145321)[![codecov](https://img.shields.io/codecov/c/github/rwu823/react-tag/master.svg)](https://codecov.io/github/rwu823/react-tag)
 
-# React Div
+# React Tag
 
-Like the normal HTML `<div/>` but useful.
+React Tag component, universal `tag` render, like the normal HTML `<tag>` but useful.
 
 ## Why?
 
-When you want to show or hide a div, you probably do this everytime:
+When you want to `show` or `hide` a div, you probably do this everytime:
 
 ```js
 render() {
@@ -19,7 +19,7 @@ render() {
 }
 ```
 
-And we always dynamically `add` or `remove` classes inconvenient.
+Dnd we always dynamically `add` or `remove` classes inconvenient.
 
 or using the [JedWatson/classnames](https://github.com/JedWatson/classnames)
 
@@ -36,69 +36,72 @@ render() {
 }
 ```
 
-Today you can stop doing that. `React Div` is your new friend.
-
-## Default Props
-
-```js
-  static propTypes = {
-    css: PropTypes.object,
-    style: PropTypes.object,
-    show: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
-    hide: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
-    className: PropTypes.string,
-  }
-
-  static defaultProps = {
-    css: {},
-    style: {},
-    show: true,
-    hide: false,
-    className: ''
-  }
-```
+Today you can stop doing that. `React Tag` is your new friend.
 
 ## Examples
-### show: dynamically show the div
-
+In `React Tag` each normal HTML tag will becomes **uppercase of first letter**, you can import for need:
 ```js
-const Div = require('react-div')
+import {Div, Img, P, H1, Button} form 'react-tag'
+render() {
+  return (
+    <Div>
+      <P />
+      <H1 />
+    </Div>
+  )
+}
+```
+
+output:
+```html
+<div>
+  <p></p>
+  <h1></h1>
+</div>
+```
+
+### show
+Dynamically show the div
+```js
+import {Div} from 'react-tag'
 render() {
   return <Div show={false} style={{color: 'red'}}>This is Dev Component</Div>
 }
 ```
 
 output:
-
 ```html
-<div style="display: none; color: red;">This is Dev Component</div>
+<div style="color: red; display: none;">This is Dev Component</div>
 ```
 
-### css: dynamically toggle css classes
+### css
 
+Dynamically toggle css classes
 ```js
-const Div = require('react-div')
-const css = {
+import {Div} from 'react-tag'
+
+render() {
+  const css = {
     foo: true,
     bar: false
-}
-render() {
+  }
   return <Div className="a b" css={css} />
 }
 ```
 
 output:
-
 ```html
 <div class="a b foo"></div>
 ```
 
-### hide: dynamically hide the div
+### hide
+
+Dynamically hide the div.
 
 Sometime we don't want to render DOM, you can hide it by passing a `hide` props:
 
 ```js
-const Div = require('react-div')
+import {Div} from 'react-tag'
 render() {
   return <Div hide={true} />
 }
