@@ -8,6 +8,9 @@
     "transform-strict-mode"
   ],
   "env": {
+    "development": {
+      "presets": ["react-hmre"]
+    },
     "production": {
       "plugins": [
         "transform-react-constant-elements",
