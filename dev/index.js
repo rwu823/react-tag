@@ -32,7 +32,9 @@ class App extends React.Component {
         <ul>
           <Li onClick={(e)=>alert(this.state.abc)}>{this.state.abc}</Li>
         </ul>
-        <Div className="a b" css={{foo: this.state.foo, bar: false}}>test dynamic toggle css</Div>
+        <Div className="a b">
+          test dynamic children {this.state.foo.toString()}
+        </Div>
       </div>
     )
   }

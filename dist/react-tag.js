@@ -167,65 +167,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _compareObj = __webpack_require__(5);
-
-	var _compareObj2 = _interopRequireDefault(_compareObj);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var Tag = function (_Component) {
-	  _inherits(Tag, _Component);
-
-	  function Tag() {
-	    _classCallCheck(this, Tag);
-
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Tag).apply(this, arguments));
-	  }
-
-	  _createClass(Tag, [{
-	    key: 'shouldComponentUpdate',
-	    value: function shouldComponentUpdate(newProps, newState) {
-	      return newProps.show !== this.props.show || newProps.hide !== this.props.hide || !(0, _compareObj2.default)(newProps.css, this.props.css);
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      var _props = this.props;
-	      var css = _props.css;
-	      var show = _props.show;
-	      var style = _props.style;
-	      var hide = _props.hide;
-	      var tagName = _props.tagName;
-	      var className = _props.className;
-
-
-	      var classList = (className + ' ' + Object.keys(css).filter(function (name) {
-	        return css[name];
-	      }).join(' ')).trim() || null;
-	      var styleList = Object.assign({}, style, {
-	        display: show ? '' : 'none'
-	      });
-
-	      var extendProps = Object.assign({}, this.props, { style: styleList, className: classList });
-
-	      return hide ? null : (0, _react.createElement)(tagName, extendProps);
-	    }
-	  }]);
-
-	  return Tag;
-	}(_react.Component);
 
 	Tag.propTypes = {
 	  css: _react.PropTypes.object,
@@ -235,6 +181,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  className: _react.PropTypes.string,
 	  tagName: _react.PropTypes.string
 	};
+
 	Tag.defaultProps = {
 	  css: {},
 	  style: {},
@@ -244,26 +191,27 @@ return /******/ (function(modules) { // webpackBootstrap
 	  tagName: 'div'
 	};
 
+	function Tag(props) {
+	  var css = props.css;
+	  var show = props.show;
+	  var style = props.style;
+	  var hide = props.hide;
+	  var tagName = props.tagName;
+	  var className = props.className;
 
-	module.exports = Tag;
-
-/***/ },
-/* 5 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	var size = function size(o) {
-	  return Object.keys(o).length;
-	};
-
-	module.exports = function (a, b) {
-	  var hasDiff = Object.keys(a).some(function (k) {
-	    return a[k] !== b[k];
+	  var classList = (className.trim() + ' ' + Object.keys(css).filter(function (name) {
+	    return css[name];
+	  }).join(' ')).trim() || null;
+	  var styleList = Object.assign({}, style, {
+	    display: show ? '' : 'none'
 	  });
 
-	  return size(a) === size(b) && !hasDiff;
-	};
+	  var extendProps = Object.assign({}, props, { style: styleList, className: classList });
+
+	  return hide ? null : (0, _react.createElement)(tagName, extendProps);
+	}
+
+	module.exports = Tag;
 
 /***/ }
 /******/ ])

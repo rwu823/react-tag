@@ -1,47 +1,36 @@
-import React, {Component, PropTypes, createElement} from 'react'
-import compareObj from './compareObj'
+import React, {PropTypes, createElement} from 'react'
 
-class Tag extends Component {
-  static propTypes = {
-    css: PropTypes.object,
-    style: PropTypes.object,
-    show: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
-    hide: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
-    className: PropTypes.string,
-    tagName: PropTypes.string,
-  }
+Tag.propTypes = {
+  css: PropTypes.object,
+  style: PropTypes.object,
+  show: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
+  hide: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
+  className: PropTypes.string,
+  tagName: PropTypes.string,
+}
 
-  static defaultProps = {
-    css: {},
-    style: {},
-    show: true,
-    hide: false,
-    className: '',
-    tagName: 'div'
-  }
+Tag.defaultProps = {
+  css: {},
+  style: {},
+  show: true,
+  hide: false,
+  className: '',
+  tagName: 'div'
+}
 
-  shouldComponentUpdate(newProps, newState) {
-    return newProps.show !== this.props.show ||
-           newProps.hide !== this.props.hide ||
-           !compareObj(newProps.css, this.props.css)
-  }
+function Tag(props) {
+  const {css, show, style, hide, tagName, className} = props
+  const classList = `${className.trim()} ${Object.keys(css).filter(name => css[name]).join(' ')}`.trim() || null
+  const styleList = Object.assign({}, style, {
+    display: show ? '' : 'none',
+  })
 
-  render() {
-    console.log('render Tag')
-    const {css, show, style, hide, tagName, className} = this.props
+  const extendProps = Object.assign({}, props, {style: styleList, className: classList})
 
-    const classList = `${className} ${Object.keys(css).filter(name => css[name]).join(' ')}`.trim() || null
-    const styleList = Object.assign({}, style, {
-      display: show ? '' : 'none',
-    })
-
-    const extendProps = Object.assign({}, this.props, {style: styleList, className: classList})
-
-    return (hide
+  return (hide
       ? null
       : createElement(tagName, extendProps)
-    )
-  }
+  )
 }
 
 module.exports = Tag
