@@ -2,9 +2,9 @@
 
 # React Tag
 React Tag component, universal `tag` render, like the normal HTML `<tag>` but useful.
-
-- [x] 0 dependency
-- [x] without invade, works well with normal tags
+- ✅ stateless
+- ✅ 0 dependency
+- ✅ without invade, works well with normal tags
 
 ## Why?
 
