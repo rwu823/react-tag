@@ -1,14 +1,10 @@
-import {createElement, Component} from 'react'
+import React from 'react'
 import tags from './tags'
 import Tag from './Tag.jsx'
 
 const tag = Object.create(null)
-const createTag = (tagname) => {
-  return (Compo) => class extends Component {
-    render() {
-      return <Compo {...this.props} {...this.state} tagName={tagname}/>
-    }
-  }
+const createTag = tagname => Compo => props => {
+  return <Compo {...props} tagName={tagname} />
 }
 
 tags.forEach((tagname)=> {
