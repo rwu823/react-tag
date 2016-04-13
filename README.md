@@ -1,6 +1,6 @@
-[![codeship](https://img.shields.io/codeship/5c0e0520-e293-0133-a7f8-2e7ba760e325/master.svg)](https://codeship.com/projects/145633) [![Coverage](https://img.shields.io/coveralls/rwu823/react-tag.svg)](https://coveralls.io/github/rwu823/react-tag)
-
+[![version](https://img.shields.io/npm/v/react-tag.svg?label=version)](https://www.npmjs.org/package/react-tag) [![download](https://img.shields.io/npm/dm/react-tag.svg)](https://www.npmjs.org/package/react-tag) [![codeship](https://img.shields.io/codeship/5c0e0520-e293-0133-a7f8-2e7ba760e325/master.svg)](https://codeship.com/projects/145633) [![Coverage](https://img.shields.io/coveralls/rwu823/react-tag.svg)](https://coveralls.io/github/rwu823/react-tag)
 # React Tag
+
 React Tag component, universal `tag` render, like the normal HTML `<tag>` but useful.
 - ✅ stateless
 - ✅ 0 dependency
@@ -30,7 +30,7 @@ const classNames = require('classnames')
 render() {
   const css = {
 	foo: true,
-	bar: false    
+	bar: false
   }
   return (
     <div className={`a b c ${classNames(css)}`} />
