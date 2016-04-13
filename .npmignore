@@ -1,3 +1,13 @@
+!/.npmignore
 node_modules
-coverage
-npm-debug.log
+
+/coverage
+/test
+/tasks
+/src
+/dev
+
+/*.md
+/*.js
+/.*
+

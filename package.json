@@ -1,6 +1,6 @@
 {
   "name": "react-tag",
-  "version": "2.0.4",
+  "version": "2.1.0",
   "description": "React Tag component, like the normal HTML <tag> but useful",
   "main": "dist/react-tag.js",
   "scripts": {
@@ -17,6 +17,9 @@
   "devDependencies": {
     "babel-core": "^6.7.6",
     "babel-loader": "^6.2.4",
+    "babel-plugin-transform-react-constant-elements": "^6.5.0",
+    "babel-plugin-transform-react-inline-elements": "^6.6.5",
+    "babel-plugin-transform-remove-console": "^6.5.0",
     "babel-plugin-transform-strict-mode": "^6.6.5",
     "babel-preset-es2015": "^6.6.0",
     "babel-preset-react": "^6.5.0",

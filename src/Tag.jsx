@@ -1,4 +1,5 @@
 import React, {Component, PropTypes, createElement} from 'react'
+import compareObj from './compareObj'
 
 class Tag extends Component {
   static propTypes = {
@@ -19,7 +20,14 @@ class Tag extends Component {
     tagName: 'div'
   }
 
+  shouldComponentUpdate(newProps, newState) {
+    return newProps.show !== this.props.show ||
+           newProps.hide !== this.props.hide ||
+           !compareObj(newProps.css, this.props.css)
+  }
+
   render() {
+    console.log('render Tag')
     const {css, show, style, hide, tagName, className} = this.props
 
     const classList = `${className} ${Object.keys(css).filter(name => css[name]).join(' ')}`.trim() || null

@@ -1,5 +1,6 @@
 const {assert} = require('chai')
 window.React = require('react')
+const {unmountComponentAtNode} = require('react-dom')
 const {Div, Img, P, H1} = require('../src')
 const {render} = require('react-dom')
 const $ = require('cash-dom')
@@ -8,7 +9,11 @@ const app = document.createElement('div')
 app.id = 'app'
 document.body.appendChild(app)
 
-describe('#test', ()=>{
+describe('#test react-tag', ()=>{
+  beforeEach(()=> {
+    unmountComponentAtNode(app)
+  })
+
   it('set css', ()=> {
     const css = {
       '-on': true,

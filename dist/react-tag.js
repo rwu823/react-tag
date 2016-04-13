@@ -173,6 +173,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _compareObj = __webpack_require__(5);
+
+	var _compareObj2 = _interopRequireDefault(_compareObj);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -191,6 +195,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 
 	  _createClass(Tag, [{
+	    key: 'shouldComponentUpdate',
+	    value: function shouldComponentUpdate(newProps, newState) {
+	      return newProps.show !== this.props.show || newProps.hide !== this.props.hide || !(0, _compareObj2.default)(newProps.css, this.props.css);
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      var _props = this.props;
@@ -237,6 +246,24 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 	module.exports = Tag;
+
+/***/ },
+/* 5 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	var size = function size(o) {
+	  return Object.keys(o).length;
+	};
+
+	module.exports = function (a, b) {
+	  var hasDiff = Object.keys(a).some(function (k) {
+	    return a[k] !== b[k];
+	  });
+
+	  return size(a) === size(b) && !hasDiff;
+	};
 
 /***/ }
 /******/ ])
