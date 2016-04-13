@@ -61,7 +61,22 @@ output:
   <h1></h1>
 </div>
 ```
+Let yourself Component extends `React Tag`'s power
+```js
+import {Div} from 'react-tag'
+class YourComponent extends Component {
+  render() {
+    return (
+      <Div {...this.props}>
 
+      </Div>
+    )
+  }
+}
+```
+
+
+## props
 ### show
 Dynamically show the div
 ```js
