@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "node ./dev/server",
     "build": "export NODE_ENV=production && gulp build",
-    "test": "karma start"
+    "test": "karma start",
+    "coveralls": "cat ./coverage/lcov.info | coveralls"
   },
   "keywords": [
     "React",
