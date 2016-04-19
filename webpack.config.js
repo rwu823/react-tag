@@ -44,7 +44,13 @@ module.exports = {
   devtool: isDev ? 'eval' : '',
   externals: isDev ? {}
   :
-    {
-      'react': 'React'
-    }
+   {
+     react: {
+       root: 'React',
+       commonjs: 'react',
+       commonjs2: 'react',
+       amd: 'react'
+     }
+   }
+
 }
