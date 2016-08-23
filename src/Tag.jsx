@@ -19,13 +19,13 @@ Tag.defaultProps = {
 }
 
 function Tag(props) {
-  const {css, show, style, hide, tagName, className} = props
+  const {css, show, style, hide, tagName, className, ...rest} = props
   const classList = `${className.trim()} ${Object.keys(css).filter(name => css[name]).join(' ')}`.trim() || null
   const styleList = Object.assign({}, style, {
     display: show ? '' : 'none',
   })
 
-  const extendProps = Object.assign({}, props, {style: styleList, className: classList})
+  const extendProps = Object.assign({}, rest, {style: styleList, className: classList})
 
   return (hide
       ? null
