@@ -14,8 +14,7 @@
     "production": {
       "plugins": [
         "transform-react-constant-elements",
-        "transform-react-inline-elements",
-        "transform-remove-console"
+        "transform-react-inline-elements"
       ]
     }
   }
