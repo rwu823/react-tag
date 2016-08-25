@@ -3,8 +3,8 @@ import React, {PropTypes, createElement} from 'react'
 Tag.propTypes = {
   css: PropTypes.object,
   style: PropTypes.object,
-  show: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
-  hide: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
+  show: PropTypes.bool,
+  hide: PropTypes.bool,
   className: PropTypes.string,
   tagName: PropTypes.string,
 }
